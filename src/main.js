@@ -6,6 +6,7 @@ import App from './App.vue'
 import Home from './components/Home.vue'
 import BookProfile from './components/BookProfile.vue'
 import FastWriter from './components/FastWriter.vue'
+import store from './store'
 const router = new VueRouter({
   routes: [
     {
@@ -24,5 +25,6 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   render: h => h(App),
-  router
+  router,
+  store
 })

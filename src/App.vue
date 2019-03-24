@@ -53,7 +53,7 @@ button {
     padding: 15px 15px;
     font-size: 1.5em;
     color: aliceblue;
-    margin-top: 10px;
+    margin-top: -25px;
     background-color: #35d2e2
 }
 </style>

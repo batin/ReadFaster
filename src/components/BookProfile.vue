@@ -1,16 +1,16 @@
 <template>
 <div>
     <a @click="homeLink">Back to Home</a>
-
-    <ul>
-        <li>
-            {{bookData.author}}
-            {{bookData.text}}
-        </li>
-    </ul>
     <router-link :to="readLink">
         <h1> READ </h1>
     </router-link>
+    <ul>
+        <li>
+            <h1> {{bookData.author}} </h1>
+            {{bookData.text}}
+        </li>
+    </ul>
+    
 </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
             bookData: {}
         }
     },
-   
+
     computed: {
         readLink() {
             return `/fast-writer/${this.$route.params.id}`
@@ -36,10 +36,11 @@ export default {
         }
     },
     created() {
-        fetch(`http://localhost:8080/books/${this.$route.params.id}`)
-                .then(res => res.json() )
-                .then(data => { this.bookData = data })
-                
+        fetch(`https://my-json-server.typicode.com/batineryilmaz/ReadFaster/books/${this.$route.params.id}`)
+            .then(res => res.json())
+            .then(data => {
+                this.bookData = data
+            })
     },
 }
 </script>

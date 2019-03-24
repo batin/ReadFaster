@@ -17,7 +17,7 @@ export default {
         }
     },
     created() {
-        fetch('http://localhost:3000/Books')
+        fetch('https://my-json-server.typicode.com/batineryilmaz/ReadFaster/books')
             .then(res => {
                 return res.json()
             })
